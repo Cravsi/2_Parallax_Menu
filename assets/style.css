@@ -22,6 +22,8 @@ body {
 
 #menu-items {
     margin-left: clamp(4rem, 2vw, 48rem);
+    position: relative;
+    z-index: 1;
 }
 
 #menu-items:hover > .menu-item{
@@ -30,6 +32,30 @@ body {
 
 #menu-items:hover > .menu-item:hover {
     opacity: 1;
+}
+
+#menu-background-image {
+    height: 100vh;
+    width: 100vw;
+
+    background-image: radial-gradient(
+        rgba(200, 200, 200, 0.3) 5%,
+        transparent 7%
+    );
+    background-position: 0% 0%;
+    background-size: 8vmin 8vmin;
+
+    position: absolute; 
+    left: 0px;
+    top: 0px;
+    z-index: 0;
+    transition: background-size 800ms ease,
+        opacity 800ms ease-in-out;
+}
+
+#menu-items:hover ~ #menu-background-image {
+    background-size: 6vmin 6vmin;
+    opacity: 0.7;
 }
 
     
